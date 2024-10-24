@@ -11,27 +11,31 @@
     </div>
   </div>
   <div class="margem container">
-    <div class="bloco margem">
-      <div class="alinha-direita" style="cursor: pointer" title="Novo Medicamento">
+    <div v-if="showTabela" class="bloco margem">
+      <div 
+      class="alinha-direita" style="cursor: pointer" title="Novo Medicamento">
         <a class="icone-inc" @click="showModal = true"></a>
       </div>
       <TabelaItens :itens="lista" :labels="labels" @editar="editar" />
     </div>
   </div>
+  <DadosHospede v-if="showDadosHospede" :labels="labels" :itemEditado="itemEditado" />
 
-  <ModalNovoItem v-if="showModal" :labels="labels" :itemEditado="itemEditado" :tipo="tipo"
+  <ModalNovoItem v-if="showModal" :labels="labels" :itemEditado="itemEditado"
     @fecharModal="showModal = false, itemEditado = {}" />
 
 </template>
 <script>
 import ModalNovoItem from '@/components/modais/modalNovoItem.vue';
+import DadosHospede from '@/components/tabelas/DadosHospede.vue';
 import TabelaItens from '@/components/tabelas/TabelaItens.vue';
 import serviceDados from '@/services/serviceDados'
 
 export default {
   components: {
     ModalNovoItem,
-    TabelaItens
+    TabelaItens,
+    DadosHospede
   },
 
   props: {
@@ -41,6 +45,8 @@ export default {
   data() {
     return {
       showModal: false,
+      showTabela: true,
+      showDadosHospede: false,
       lista: [],
       labels: [],
       itemEditado: null
@@ -57,7 +63,12 @@ export default {
   methods: {
     editar(item) {
       this.itemEditado = item;
-      this.showModal = true
+      if (this.tipo == 'Hospede') {
+        this.showDadosHospede = true,
+          this.showTabela = false
+      } else {
+        this.showModal = true
+      }
     },
 
     definirLista() {
