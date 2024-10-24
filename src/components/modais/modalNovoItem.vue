@@ -45,23 +45,4 @@ export default {
         cursor: pointer;
     }
 }
-
-.calendario {
-    width: 3rem;
-    height: 3rem;
-    padding: 2px;
-    border-radius: 50%;
-    background-color: var(--cor-primaria);
-
-    i {
-        font-size: 25px;
-        color: var(--cor-bg);
-    }
-}
-
-.calendario:hover {
-    transition: all 100ms linear;
-    transform: scale(1.1);
-    cursor: pointer;
-}
 </style>

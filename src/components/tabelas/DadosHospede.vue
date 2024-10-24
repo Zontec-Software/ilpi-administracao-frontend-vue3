@@ -1,12 +1,13 @@
 <template>
-    <div>
-        <div class="margem">
-            <div style="display: flex; justify-content: space-between;">
-                <h3>Dados</h3>
-                <div class="calendario alinha-centro alinha-v">
-                    <i title="Calendário do Hospede" class="bi bi-calendar-week"></i>
-                </div>
+    <div class="margem">
+        <div style="display: flex; justify-content: space-between;">
+            <h3>{{ showCalendario ? 'Agenda do Hospede' : 'Dados' }}</h3>
+            <div class="calendario alinha-centro alinha-v" :class="showCalendario ? 'ativo' : ''">
+                <i @click="showCalendario = !showCalendario" title="Calendário do Hospede"
+                    class="bi bi-calendar-week"></i>
             </div>
+        </div>
+        <div v-if="!showCalendario">
             <fieldset class="grid-3 margem">
                 <div v-for="label, index in labels" :key="index">
                     <label>{{ label.label }}</label>
@@ -34,20 +35,48 @@
                 <button @click="fecharModal" class="acao-secundaria">Cancelar</button>
             </div>
         </div>
+        <CalendarioComponent v-else />
     </div>
 </template>
 <script>
+import CalendarioComponent from '../calendario/CalendarioComponent.vue';
+
 export default {
     name: 'DadosHospede',
+    components: {
+        CalendarioComponent
+    },
     props: {
         itemEditado: { Required: false },
         labels: { Required: true }
     },
     data() {
         return {
-            item: this.itemEditado ? this.itemEditado : {}
+            item: this.itemEditado ? this.itemEditado : {},
+            showCalendario: false
         }
     },
 }
 </script>
-<style></style>
+<style>
+.ativo {
+    background-color: var(--cor-primaria);
+}
+
+.calendario {
+    width: 3rem;
+    height: 3rem;
+    padding: 2px;
+    border-radius: 50%;
+
+    i {
+        font-size: 25px;
+    }
+}
+
+.calendario:hover {
+    transition: all 100ms linear;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+</style>

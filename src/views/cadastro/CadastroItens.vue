@@ -11,15 +11,14 @@
     </div>
   </div>
   <div class="margem container">
-    <div v-if="showTabela" class="bloco margem">
-      <div 
-      class="alinha-direita" style="cursor: pointer" title="Novo Medicamento">
+    <div class="bloco margem">
+      <div v-if="showTabela" class="alinha-direita" style="cursor: pointer" title="Novo Medicamento">
         <a class="icone-inc" @click="showModal = true"></a>
       </div>
-      <TabelaItens :itens="lista" :labels="labels" @editar="editar" />
+      <TabelaItens v-if="showTabela" :itens="lista" :labels="labels" @editar="editar" />
+      <DadosHospede v-if="showDadosHospede" :labels="labels" :itemEditado="itemEditado" />
     </div>
   </div>
-  <DadosHospede v-if="showDadosHospede" :labels="labels" :itemEditado="itemEditado" />
 
   <ModalNovoItem v-if="showModal" :labels="labels" :itemEditado="itemEditado"
     @fecharModal="showModal = false, itemEditado = {}" />
