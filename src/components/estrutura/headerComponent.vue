@@ -5,6 +5,7 @@
                 <nav class="jm jm-menu nav-maior none" id="menu">
                     <div class="separador">
                         <a href="#/cadastro">Cadastro</a>
+                        <a href="#/cadastro">Check-in</a>
                     </div>
                 </nav>
                 <a href="#" class="logo logo-menor">.</a>

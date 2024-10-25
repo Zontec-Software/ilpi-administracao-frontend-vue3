@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import cadastroItens from '../views/cadastro/CadastroItens.vue'
 import HomeCadastro from '@/views/cadastro/HomeCadastro.vue'
 import LoginView from '@/views/LoginView.vue'
+import HospedeView from '@/views/HospedeView.vue'
 
 const routes = [
   {
@@ -20,6 +21,12 @@ const routes = [
     name: 'cadastroItens',
     props: true,
     component: cadastroItens,
+  },
+  {
+    path: '/hospede/:hospedeId',
+    name: 'HospedeView',
+    props: true,
+    component: HospedeView,
   },
 ]
 

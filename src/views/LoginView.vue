@@ -19,7 +19,7 @@
                     </div>
                 </fieldset>
                 <div class="submit">
-                    <button @click=" this.$router.push({ name: 'HomeCadastro' })"><span
+                    <button class="button" @click=" this.$router.push({ name: 'HomeCadastro' })"><span
                             class="icone-avancar direita"></span>Entrar</button>
                     <a class="botao">Esqueci minha senha</a>
                 </div>

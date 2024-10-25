@@ -13,8 +13,8 @@
                         </select>
                     </div>
                 </fieldset>
-                <div class="submit"><button @click="fecharModal">Salvar</button><button @click="fecharModal"
-                        class="acao-secundaria">Cancelar</button></div>
+                <div class="submit"><button class="button" @click="fecharModal">Salvar</button><button @click="fecharModal"
+                        class="acao-secundaria button">Cancelar</button></div>
             </div>
         </div>
     </div>

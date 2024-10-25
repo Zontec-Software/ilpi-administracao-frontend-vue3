@@ -80,7 +80,7 @@ body,
 input,
 textarea,
 select,
-button {
+.button {
   background: var(--cor-bg);
   color: var(--cor-fonte);
   font: 14px/1.572 OpenSans, arial, sans-serif;
@@ -123,7 +123,7 @@ textarea {
 }
 
 select,
-button {
+.button {
   border: 1px solid var(--cor-separador);
   border-radius: 6px;
   padding: 12px 16px;
@@ -833,31 +833,31 @@ legend {
   color: var(--cor-primaria);
 }
 
-button {
+.button {
   border-radius: 24px;
   padding: 12px calc(var(--margem) * 1.5);
   width: auto;
   font-weight: 700;
 }
-.login button {
+.login .button {
   min-width: calc(var(--margem) * 7);
   padding: 12px var(--margem);
 }
-button:not(.acao-secundaria) {
+.button:not(.acao-secundaria) {
   color: var(--cor-bg);
   background: linear-gradient(var(--cor-primaria), var(--cor-primaria-forte) 200%);
 }
-button.acao-secundaria {
+.button.acao-secundaria {
   background: transparent;
 }
-button[disabled] {
+.button[disabled] {
   opacity: 0.5;
 }
-button:not([disabled]):hover {
+.button:not([disabled]):hover {
   border-color: var(--cor-separador);
   cursor: pointer;
 }
-button:active {
+.button:active {
   opacity: 0.75;
 }
 

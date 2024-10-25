@@ -17,7 +17,7 @@
                     </div>
                     <div v-if="label.chave == 'status'">
                         <span class="chip"
-                            :class="item.status == 'ativo' ? 'bg-sucesso' : item.status == 'afastado' ? 'bg-ok' : item.status == 'desligado' ? 'bg-erro' : item.status == 'inativo' ? 'bg-alerta' : 'bg-ok'">{{
+                            :class="item.status == 'ativo' || item.status == 'desocupado' ? 'bg-sucesso' : item.status == 'afastado' ? 'bg-ok' : item.status == 'desligado' || item.status == 'ocupado' ? 'bg-erro' : item.status == 'inativo' ? 'bg-alerta' : 'bg-ok'">{{
                                 item.status }}</span>
                     </div>
                 </td>

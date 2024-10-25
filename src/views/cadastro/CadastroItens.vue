@@ -7,26 +7,25 @@
           <a class="icone-pesquisa"></a>
         </div>
       </div>
+      <div class="m-icone esquerda"><a @click="this.$router.push('/cadastro')" style="cursor: pointer;"
+          class="icone-voltar m-d" title="Baixar aplicativo"></a></div>
       <h2>{{ tipo }}</h2>
     </div>
   </div>
   <div class="margem container">
     <div class="bloco margem">
-      <div v-if="showTabela" class="alinha-direita" style="cursor: pointer" title="Novo Medicamento">
+      <div class="alinha-direita" style="cursor: pointer" title="Novo Medicamento">
         <a class="icone-inc" @click="showModal = true"></a>
       </div>
-      <TabelaItens v-if="showTabela" :itens="lista" :labels="labels" @editar="editar" />
-      <DadosHospede v-if="showDadosHospede" :labels="labels" :itemEditado="itemEditado" />
+      <TabelaItens :itens="lista" :labels="labels" @editar="editar" />
     </div>
   </div>
 
   <ModalNovoItem v-if="showModal" :labels="labels" :itemEditado="itemEditado"
     @fecharModal="showModal = false, itemEditado = {}" />
-
 </template>
 <script>
 import ModalNovoItem from '@/components/modais/modalNovoItem.vue';
-import DadosHospede from '@/components/tabelas/DadosHospede.vue';
 import TabelaItens from '@/components/tabelas/TabelaItens.vue';
 import serviceDados from '@/services/serviceDados'
 
@@ -34,7 +33,6 @@ export default {
   components: {
     ModalNovoItem,
     TabelaItens,
-    DadosHospede
   },
 
   props: {
@@ -63,8 +61,8 @@ export default {
     editar(item) {
       this.itemEditado = item;
       if (this.tipo == 'Hospede') {
-        this.showDadosHospede = true,
-          this.showTabela = false
+        var hospedeId = item.id
+        this.$router.push({ name: 'HospedeView', params: { hospedeId } })
       } else {
         this.showModal = true
       }
@@ -83,6 +81,14 @@ export default {
         case "Hospede":
           this.lista = serviceDados.getHospedes().lista
           this.labels = serviceDados.getHospedes().labels
+          break;
+        case "Leitos e Instalações":
+          this.lista = serviceDados.getQuartos().lista
+          this.labels = serviceDados.getQuartos().labels
+          break;
+        case "Atividades":
+          this.lista = serviceDados.getAtividades().lista
+          this.labels = serviceDados.getAtividades().labels
           break;
         default:
           break;
