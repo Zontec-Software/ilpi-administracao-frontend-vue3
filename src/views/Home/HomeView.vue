@@ -24,6 +24,12 @@
                     <figcaption class="margem abs">Cadastro</figcaption>
                 </figure>
             </a>
+            <a @click="routerPush('EmocaoView')" style="cursor: pointer" class="card bloco">
+                <figure>
+                    <img src="@/assets/img/faceDetector.jpg" />
+                    <figcaption class="margem abs">Detecção de Emoções (teste)</figcaption>
+                </figure>
+            </a>
         </div>
     </div>
 </template>

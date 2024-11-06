@@ -1,3 +1,4 @@
+import EmocaoView from '@/views/EmocaoView.vue';
 import { createRouter, createWebHashHistory } from 'vue-router'
 const cadastroItens = () => import('../views/cadastro/CadastroItens.vue');
 const HomeCadastro = () => import('@/views/Home/HomeCadastro.vue');
@@ -51,6 +52,12 @@ const routes = [
     name: 'HospedeView',
     props: true,
     component: HospedeView,
+    meta: { modulo: 'Cadastro' }
+  },
+  {
+    path: '/emocao',
+    name: 'EmocaoView',
+    component: EmocaoView,
     meta: { modulo: 'Cadastro' }
   },
 ]
