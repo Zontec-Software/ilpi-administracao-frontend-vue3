@@ -1,8 +1,8 @@
 <template>
   <HeaderComponent v-if="!$route.meta.esconderMenu" />
 
-  <body class="inicial" style="min-height: 90vh;">
-    <main id="main" class="esconde">
+  <body class="inicial" style="min-height: 80vh">
+    <main id="main">
       <MenuLateralComponent v-if="!$route.meta.esconderMenuLateral" />
       <section>
         <router-view />
@@ -22,4 +22,13 @@ export default {
 </script>
 <style>
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--cor-separador);
+  border-radius: 20px;
+}
 </style>
