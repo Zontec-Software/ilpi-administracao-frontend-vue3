@@ -26,7 +26,7 @@
             </a>
             <a @click="routerPush('EmocaoView')" style="cursor: pointer" class="card bloco">
                 <figure>
-                    <img src="@/assets/img/faceDetector.jpg" />
+                    <img src="@/assets/img/teste.jpg" />
                     <figcaption class="margem abs">Detecção de Emoções (teste)</figcaption>
                 </figure>
             </a>

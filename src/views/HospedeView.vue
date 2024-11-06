@@ -3,6 +3,13 @@
         <div class="margem container">
             <div class="m-icone esquerda"><a @click="this.$router.back()" style="cursor: pointer;"
                     class="icone-voltar m-d"></a></div>
+            <div class="direita">
+                <div class="tags">
+                    <a class="bg-sucesso" @click="showModalAdministrarMedicamento = true">Administrar Medicamento</a>
+                    <a class="bg-ok" @click="showModalRegistrarConsulta = true">Registrar Consulta</a>
+                    <a class="bg-erro">Ficha Psicológica</a>
+                </div>
+            </div>
             <h2>Hospede {{ item.nomeCompleto }}</h2>
         </div>
     </div>
@@ -43,23 +50,34 @@
             <DashBoardComponent />
         </div>
     </div>
+
+    <ModalAdministrarMedicamento v-if="showModalAdministrarMedicamento"
+        @fecharModal="showModalAdministrarMedicamento = false" />
+
+    <ModalRegistrarConsulta v-if="showModalRegistrarConsulta" @fecharModal="showModalRegistrarConsulta = false" />
 </template>
 <script>
 import CalendarioComponent from '@/components/calendario/CalendarioComponent.vue';
 import DashBoardComponent from '@/components/DashBoard/DashBoardComponent.vue';
+import ModalAdministrarMedicamento from '@/components/modais/modalAdministrarMedicamento.vue';
+import ModalRegistrarConsulta from '@/components/modais/modalRegistrarConsulta.vue';
 import serviceDados from '@/services/serviceDados'
 
 export default {
     name: 'DadosHospede',
     components: {
         CalendarioComponent,
-        DashBoardComponent
+        DashBoardComponent,
+        ModalAdministrarMedicamento,
+        ModalRegistrarConsulta
     },
     props: {
         hospedeId: { Required: false },
     },
     data() {
         return {
+            showModalRegistrarConsulta: false,
+            showModalAdministrarMedicamento: false,
             labels: serviceDados.getHospedes().labels,
             lista: serviceDados.getHospedes().lista,
             item: {},
