@@ -6,7 +6,7 @@
                     {{ label.label }}
                 </th>
             </tr>
-            <tr v-for="(item, index) in itens" :key="index" @click="editar(item)">
+            <tr v-for="(item, index) in itens" :key="index" @click="editar(item)" style="cursor: pointer;">
                 <td v-for="(label, index) in labels" :key="index">
                     <div v-if="label.chave !== 'status' && label.chave !== 'dataNascimento' && label.chave !== 'validade'"
                         :style="{ 'text-align': (label.chave == 'nomeCompleto') ? 'left' : '' }">
@@ -17,20 +17,13 @@
                     </div>
                     <div v-if="label.chave == 'status'">
                         <span class="chip"
-                            :class="item.status == 'ativo' || item.status == 'desocupado' ? 'bg-sucesso' : item.status == 'afastado' ? 'bg-ok' : item.status == 'desligado' || item.status == 'ocupado' ? 'bg-erro' : item.status == 'inativo' ? 'bg-alerta' : 'bg-ok'">{{
+                            :class="item.status == 'Ativo' || item.status == 'Desocupado' ? 'bg-sucesso' : item.status == 'Afastado' ? 'bg-ok' : item.status == 'Desligado' || item.status == 'Ocupado' ? 'bg-erro' : item.status == 'Inativo' ? 'bg-alerta' : item.status == 'Entrada Pendente' ? 'bg-alerta' : 'bg-ok'">{{
                                 item.status }}</span>
                     </div>
                 </td>
             </tr>
         </tbody>
     </table>
-    <div class="paginacao">
-        <a href="#" class="ativo">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <span>...</span>
-        <a href="#">16</a>
-    </div>
 </template>
 <script>
 import serviceFunções from '@/services/serviceFunções'

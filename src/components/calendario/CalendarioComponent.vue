@@ -1,5 +1,5 @@
 <template>
-    <div class="margem" style="display: flex;">
+    <div style="display: flex;">
         <!-- <vue-cal selected-date="2018-11-19" style="height: 400px;border-radius: 10px; margin-right: 5px"
             :time-from="10 * 60" :disable-views="['day']" events-count-on-year-view active-view="month" :events="events"
             hide-weekends>

@@ -19,7 +19,7 @@
                     </div>
                 </fieldset>
                 <div class="submit">
-                    <button class="button" @click=" this.$router.push({ name: 'HomeCadastro' })"><span
+                    <button class="button" @click=" this.$router.push({ name: 'HomeView' })"><span
                             class="icone-avancar direita"></span>Entrar</button>
                     <a class="botao">Esqueci minha senha</a>
                 </div>
@@ -34,9 +34,14 @@ export default {
 </script>
 <style scoped>
 .bloco {
-    background-color: #f6f5f0ad
+    border: 1px solid white;
+    background-color: transparent;
+    backdrop-filter: blur(15px);
+    width: 30rem !important;
 }
 a {
     cursor: pointer;
+    white-space: nowrap;
+    color: white;
 }
 </style>

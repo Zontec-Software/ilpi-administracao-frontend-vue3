@@ -5,7 +5,7 @@
                 <fieldset class="grid-3 margem">
                     <div v-for="label, index in labels" :key="index">
                         <label>{{ label.label }}</label>
-                        <input v-if="label.chave !== 'quarto'" type="text" v-model="item[label.chave]" />
+                        <input v-if="label.chave !== 'quarto'" :type="label.type" v-model="item[label.chave]" />
                         <select v-if="label.chave == 'quarto'" v-model="item[label.chave]">
                             <option v-for="(item, index) in Array.from({ length: 21 }, (_, i) => 100 + i)" :key="index">
                                 {{ item }}
@@ -13,8 +13,8 @@
                         </select>
                     </div>
                 </fieldset>
-                <div class="submit"><button class="button" @click="fecharModal">Salvar</button><button @click="fecharModal"
-                        class="acao-secundaria button">Cancelar</button></div>
+                <div class="submit"><button class="button" @click="fecharModal">Salvar</button><button
+                        @click="fecharModal" class="acao-secundaria button">Cancelar</button></div>
             </div>
         </div>
     </div>

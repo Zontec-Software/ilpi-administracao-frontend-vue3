@@ -7,8 +7,8 @@
           <a class="icone-pesquisa"></a>
         </div>
       </div>
-      <div class="m-icone esquerda"><a @click="this.$router.push('/cadastro')" style="cursor: pointer;"
-          class="icone-voltar m-d" title="Baixar aplicativo"></a></div>
+      <div class="m-icone esquerda"><a @click="this.$router.back()" style="cursor: pointer;"
+          class="icone-voltar m-d"></a></div>
       <h2>{{ tipo }}</h2>
     </div>
   </div>
@@ -68,27 +68,27 @@ export default {
       }
     },
 
-    definirLista() {
+    async definirLista() {
       switch (this.tipo) {
         case "Medicamentos":
-          this.lista = serviceDados.getMedicamentos().lista
-          this.labels = serviceDados.getMedicamentos().labels
+          this.lista = await serviceDados.getMedicamentos().lista
+          this.labels = await serviceDados.getMedicamentos().labels
           break;
         case "Corpo Clínico":
-          this.lista = serviceDados.getCorpoClinico().lista
-          this.labels = serviceDados.getCorpoClinico().labels
+          this.lista = await serviceDados.getCorpoClinico().lista
+          this.labels = await serviceDados.getCorpoClinico().labels
           break;
         case "Hospede":
-          this.lista = serviceDados.getHospedes().lista
-          this.labels = serviceDados.getHospedes().labels
+          this.lista = await serviceDados.getHospedes().lista
+          this.labels = await serviceDados.getHospedes().labels
           break;
         case "Leitos e Instalações":
-          this.lista = serviceDados.getQuartos().lista
-          this.labels = serviceDados.getQuartos().labels
+          this.lista = await serviceDados.getQuartos().lista
+          this.labels = await serviceDados.getQuartos().labels
           break;
         case "Atividades":
-          this.lista = serviceDados.getAtividades().lista
-          this.labels = serviceDados.getAtividades().labels
+          this.lista = await serviceDados.getAtividades().lista
+          this.labels = await serviceDados.getAtividades().labels
           break;
         default:
           break;

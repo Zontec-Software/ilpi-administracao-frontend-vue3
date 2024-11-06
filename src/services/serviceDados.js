@@ -1,11 +1,11 @@
 const dados = {
     getMedicamentos() {
         const labels = [
-            { label: 'Nome', chave: 'nome' },
-            { label: 'Tipo', chave: 'tipo' },
-            { label: 'Quantidade em Estoque', chave: 'quantidadeEstoque' },
-            { label: 'Fabricante', chave: 'fabricante' },
-            { label: 'Data de Validade', chave: 'validade' },
+            { label: 'Nome', chave: 'nome', type: 'text' },
+            { label: 'Tipo', chave: 'tipo', type: 'text' },
+            { label: 'Quantidade em Estoque', chave: 'quantidadeEstoque', type: 'number' },
+            { label: 'Fabricante', chave: 'fabricante', type: 'text' },
+            { label: 'Data de Validade', chave: 'validade', type: 'date' },
         ]
         const lista = [
             {
@@ -94,21 +94,21 @@ const dados = {
     },
     getCorpoClinico() {
         const labels = [
-            { label: 'Nome', chave: 'nomeCompleto' },
-            { label: 'Função', chave: 'funcao' },
-            { label: 'Especialidade', chave: 'especialidade' },
-            { label: 'RP', chave: 'registroProfissional' },
-            // { label: 'Data de Nascimento', chave: 'dataNascimento' },
-            { label: 'Telefone', chave: 'telefone' },
-            { label: 'E-mail', chave: 'email' },
-            { label: 'Status', chave: 'status' },
+            { label: 'Nome', chave: 'nomeCompleto', type: 'text' },
+            { label: 'Função', chave: 'funcao', type: 'text' },
+            { label: 'Especialidade', chave: 'especialidade', type: 'text' },
+            { label: 'RP', chave: 'registroProfissional', type: 'text' },
+            // { label: 'Data de Nascimento', chave: 'dataNascimento', type: 'date' },
+            { label: 'Telefone', chave: 'telefone', type: 'text' },
+            { label: 'E-mail', chave: 'email', type: 'text' },
+            { label: 'Status', chave: 'status', type: 'text' },
         ]
         const lista = [
             {
                 id: 1,
                 nomeCompleto: "Dr. João da Silva",
                 dataNascimento: "1975-05-12",
-                status: "ativo",
+                status: "Ativo",
                 funcao: "medico",
                 especialidade: "Cardiologia",
                 registroProfissional: "123456-MG",
@@ -119,7 +119,7 @@ const dados = {
                 id: 2,
                 nomeCompleto: "Enf. Maria Oliveira",
                 dataNascimento: "1983-09-22",
-                status: "afastado",
+                status: "Afastado",
                 funcao: "enfermeira",
                 especialidade: "Pediatria",
                 registroProfissional: "987654-MG",
@@ -130,7 +130,7 @@ const dados = {
                 id: 3,
                 nomeCompleto: "Tec. Enfermagem Carlos Pereira",
                 dataNascimento: "1990-11-05",
-                status: "ativo",
+                status: "Ativo",
                 funcao: "tec.enfermagem",
                 especialidade: "UTI",
                 registroProfissional: "345678-MG",
@@ -141,7 +141,7 @@ const dados = {
                 id: 4,
                 nomeCompleto: "Dr. Ana Costa",
                 dataNascimento: "1980-03-10",
-                status: "ativo",
+                status: "Ativo",
                 funcao: "medica",
                 especialidade: "Neurologia",
                 registroProfissional: "234567-MG",
@@ -152,7 +152,7 @@ const dados = {
                 id: 5,
                 nomeCompleto: "Enf. Júlia Ferreira",
                 dataNascimento: "1985-08-25",
-                status: "inativo",
+                status: "Inativo",
                 funcao: "enfermeira",
                 especialidade: "Oncologia",
                 registroProfissional: "456789-MG",
@@ -163,7 +163,7 @@ const dados = {
                 id: 6,
                 nomeCompleto: "Tec. Enfermagem Pedro Souza",
                 dataNascimento: "1992-06-30",
-                status: "desligado",
+                status: "Desligado",
                 funcao: "tec.enfermagem",
                 especialidade: "Cirurgia",
                 registroProfissional: "567890-MG",
@@ -174,7 +174,7 @@ const dados = {
                 id: 7,
                 nomeCompleto: "Dr. Lucas Almeida",
                 dataNascimento: "1978-12-15",
-                status: "ativo",
+                status: "Ativo",
                 funcao: "medico",
                 especialidade: "Ortopedia",
                 registroProfissional: "345678-MG",
@@ -185,7 +185,7 @@ const dados = {
                 id: 8,
                 nomeCompleto: "Enf. Fernanda Rocha",
                 dataNascimento: "1986-01-18",
-                status: "afastado",
+                status: "Afastado",
                 funcao: "enfermeira",
                 especialidade: "Geriatria",
                 registroProfissional: "678901-MG",
@@ -196,7 +196,7 @@ const dados = {
                 id: 9,
                 nomeCompleto: "Tec. Enfermagem Ricardo Silva",
                 dataNascimento: "1994-04-07",
-                status: "ativo",
+                status: "Ativo",
                 funcao: "tec.enfermagem",
                 especialidade: "Emergência",
                 registroProfissional: "789012-MG",
@@ -207,7 +207,7 @@ const dados = {
                 id: 10,
                 nomeCompleto: "Dra. Beatriz Melo",
                 dataNascimento: "1982-02-28",
-                status: "ativo",
+                status: "Ativo",
                 funcao: "medica",
                 especialidade: "Dermatologia",
                 registroProfissional: "456789-MG",
@@ -220,19 +220,19 @@ const dados = {
     },
     getHospedes() {
         const labels = [
-            { label: 'Nome', chave: 'nomeCompleto' },
-            { label: 'Quarto', chave: 'quarto' },
-            { label: 'Cuidados', chave: 'cuidadosEspeciais' },
-            { label: 'Data de Nascimento', chave: 'dataNascimento' },
-            { label: 'Contato de Emergencia', chave: 'contatoEmergencia' },
-            { label: 'Status', chave: 'status' },
+            { label: 'Nome', chave: 'nomeCompleto', type: 'text' },
+            { label: 'Quarto', chave: 'quarto', type: 'text' },
+            { label: 'Cuidados', chave: 'cuidadosEspeciais', type: 'text' },
+            { label: 'Data de Nascimento', chave: 'dataNascimento', type: 'date' },
+            { label: 'Contato de Emergencia', chave: 'contatoEmergencia', type: 'text' },
+            { label: 'Status', chave: 'status', type: 'text' },
         ]
         const lista = [
             {
                 id: 1,
                 nomeCompleto: "Maria Antônia de Souza",
                 dataNascimento: "1945-03-12",
-                status: "ativo",
+                status: "Saída Temporária",
                 quarto: 101,
                 cuidadosEspeciais: "Necessita de acompanhamento para medicamentos",
                 contatoEmergencia: "(31) 99999-1234"
@@ -241,7 +241,7 @@ const dados = {
                 id: 2,
                 nomeCompleto: "João Carlos Pereira",
                 dataNascimento: "1938-07-20",
-                status: "em tratamento",
+                status: "Ativo",
                 quarto: 102,
                 cuidadosEspeciais: "Fisioterapia diária",
                 contatoEmergencia: "(31) 98888-5678"
@@ -250,7 +250,7 @@ const dados = {
                 id: 3,
                 nomeCompleto: "Ana Clara Rodrigues",
                 dataNascimento: "1950-05-05",
-                status: "ativo",
+                status: "Ativo",
                 quarto: 103,
                 cuidadosEspeciais: "Dieta especial",
                 contatoEmergencia: "(31) 97777-9876"
@@ -259,7 +259,7 @@ const dados = {
                 id: 4,
                 nomeCompleto: "Carlos Eduardo da Silva",
                 dataNascimento: "1942-11-15",
-                status: "em observação",
+                status: "Saída Temporária",
                 quarto: 104,
                 cuidadosEspeciais: "Monitoração de pressão arterial",
                 contatoEmergencia: "(31) 96666-3456"
@@ -268,7 +268,7 @@ const dados = {
                 id: 5,
                 nomeCompleto: "Francisca Almeida",
                 dataNascimento: "1940-02-28",
-                status: "ativo",
+                status: "Ativo",
                 quarto: 105,
                 cuidadosEspeciais: "Necessita de ajuda para locomoção",
                 contatoEmergencia: "(31) 95555-4321"
@@ -277,7 +277,7 @@ const dados = {
                 id: 6,
                 nomeCompleto: "Pedro Henrique Barbosa",
                 dataNascimento: "1937-09-10",
-                status: "desligado",
+                status: "Desligado",
                 quarto: null,
                 cuidadosEspeciais: "N/A",
                 contatoEmergencia: "(31) 94444-6543"
@@ -286,7 +286,7 @@ const dados = {
                 id: 7,
                 nomeCompleto: "Luciana Oliveira",
                 dataNascimento: "1948-04-25",
-                status: "ativo",
+                status: "Entrada Pendente",
                 quarto: 106,
                 cuidadosEspeciais: "Controle de diabetes",
                 contatoEmergencia: "(31) 93333-7654"
@@ -295,7 +295,7 @@ const dados = {
                 id: 8,
                 nomeCompleto: "Fernando Gomes",
                 dataNascimento: "1944-08-18",
-                status: "em tratamento",
+                status: "Ativo",
                 quarto: 107,
                 cuidadosEspeciais: "Reabilitação pós-cirúrgica",
                 contatoEmergencia: "(31) 92222-8765"
@@ -304,7 +304,7 @@ const dados = {
                 id: 9,
                 nomeCompleto: "Marina Souza",
                 dataNascimento: "1952-06-22",
-                status: "ativo",
+                status: "Saída Temporária",
                 quarto: 108,
                 cuidadosEspeciais: "Auxílio para alimentação",
                 contatoEmergencia: "(31) 91111-9876"
@@ -313,7 +313,7 @@ const dados = {
                 id: 10,
                 nomeCompleto: "José Francisco Ramos",
                 dataNascimento: "1939-12-05",
-                status: "ativo",
+                status: "Ativo",
                 quarto: 109,
                 cuidadosEspeciais: "Necessita de acompanhamento médico regular",
                 contatoEmergencia: "(31) 90000-1234"
@@ -324,10 +324,10 @@ const dados = {
     },
     getQuartos() {
         const labels = [
-            { label: 'Quarto', chave: 'numero' },
-            { label: 'Hospede', chave: 'alocado' },
-            { label: 'Status', chave: 'status' },
-            { label: 'Tipo', chave: 'tipo' },
+            { label: 'Quarto', chave: 'numero', type: 'text' },
+            { label: 'Hospede', chave: 'alocado', type: 'text' },
+            { label: 'Status', chave: 'status', type: 'text' },
+            { label: 'Tipo', chave: 'tipo', type: 'text' },
         ]
 
         const lista = [
@@ -426,12 +426,12 @@ const dados = {
     },
     getAtividades() {
         const labels = [
-            { label: 'Atividade', chave: 'nome' },
-            { label: 'Tipo', chave: 'tipo' },
-            { label: 'Descrição', chave: 'descricao' },
-            { label: 'Duração', chave: 'duracao' },
-            // { label: 'Horário', chave: 'horario' },
-            { label: 'Instrutor', chave: 'instrutor' }
+            { label: 'Atividade', chave: 'nome', type: 'text' },
+            { label: 'Tipo', chave: 'tipo', type: 'text' },
+            { label: 'Descrição', chave: 'descricao', type: 'text' },
+            { label: 'Duração', chave: 'duracao', type: 'text' },
+            // { label: 'Horário', chave: 'horario', type: 'text' },
+            { label: 'Instrutor', chave: 'instrutor', type: 'text' }
         ];
 
         const lista = [
@@ -528,6 +528,110 @@ const dados = {
         ];
 
         return { lista: lista, labels: labels }
+    },
+    getFormulario() {
+        const labelsFormulario = [
+            {
+                assunto: "Período Fora",
+                dados: [
+                    { label: "Data de Saída", chave: "dataSaida", type: "date" },
+                    { label: "Responsável Durante a Ausência", chave: "responsavelAusencia", type: "text" },
+                    { label: "Observações Gerais sobre o Período Fora", chave: "observacoesPeriodoFora", type: "textarea" }
+                ]
+            },
+            {
+                assunto: "Avaliação do Estado Físico",
+                dados: [
+                    { label: "Peso Atual", chave: "pesoAtual", type: "number" },
+                    { label: "Altura", chave: "altura", type: "number" },
+                    { label: "Pressão Arterial", chave: "pressaoArterial", type: "text" },
+                    { label: "Frequência Cardíaca", chave: "frequenciaCardiaca", type: "number" },
+                    { label: "Observação Geral do Estado Físico", chave: "observacaoEstadoFisico", type: "textarea" }
+                ]
+            },
+            {
+                assunto: "Avaliação Nutricional",
+                dados: [
+                    {
+                        label: "Apetite",
+                        chave: "apetite",
+                        type: "select",
+                        options: ["Bom", "Regular", "Ruim"]
+                    },
+                    {
+                        label: "Nível de Hidratação",
+                        chave: "nivelHidratacao",
+                        type: "radio",
+                        options: ["Adequado", "Inadequado"]
+                    },
+                    {
+                        label: "Observações sobre Nutrição",
+                        chave: "observacoesNutricionais",
+                        type: "text"
+                    }
+                ]
+            },
+            {
+                assunto: "Condição Médica",
+                dados: [
+                    { label: "Medicamentos Durante a Ausência", chave: "medicamentosAusencia", type: "checkbox", options: ["Sim", "Não"] },
+                    { label: "Quais Medicamentos", chave: "quaisMedicamentos", type: "text" },
+                    { label: "Sintomas Apresentados Durante a Ausência", chave: "sintomasAusencia", type: "text" },
+                    { label: "Observações sobre Condição Médica Geral", chave: "observacoesCondicaoMedica", type: "textarea" }
+                ]
+            },
+            {
+                assunto: "Estado Psicológico e Emocional",
+                dados: [
+                    {
+                        label: "Nível de Confusão ou Desorientação",
+                        chave: "nivelConfusaoDesorientacao",
+                        type: "radio",
+                        options: ["Nenhum", "Leve", "Moderado", "Grave"]
+                    },
+                    {
+                        label: "Humor Geral",
+                        chave: "humorGeral",
+                        type: "select",
+                        options: ["Calmo", "Ansioso", "Depressivo", "Agitado"]
+                    },
+                    {
+                        label: "Observações Psicológicas",
+                        chave: "observacoesPsicologicas",
+                        type: "textarea"
+                    }
+                ]
+            },
+            {
+                assunto: "Condições Motoras",
+                dados: [
+                    {
+                        label: "Mobilidade Geral",
+                        chave: "mobilidadeGeral",
+                        type: "select",
+                        options: ["Normal", "Limitada", "Restrita"]
+                    },
+                    { label: "Necessidade de Assistência para Caminhar", chave: "assistenciaCaminhada", type: "checkbox", options: ["Sim", "Não"] },
+                    { label: "Observações sobre Condições Motoras", chave: "observacoesCondicoesMotoras", type: "textarea" }
+                ]
+            },
+            {
+                assunto: "Plano de Acompanhamento",
+                dados: [
+                    { label: "Necessidade de Revisão Médica", chave: "revisaoMedica", type: "checkbox", options: ["Sim", "Não"] },
+                    { label: "Necessidade de Acompanhamento com Especialistas", chave: "acompanhamentoEspecialistas", type: "checkbox", options: ["Sim", "Não"] },
+                    { label: "Observações sobre Plano de Acompanhamento", chave: "observacoesPlanoAcompanhamento", type: "textarea" }
+                ]
+            },
+            {
+                assunto: "Responsável pelo Check-in",
+                dados: [
+                    { label: "Nome do Responsável pelo Check-in", chave: "nomeResponsavelCheckin", type: "text" },
+                    { label: "Data do Check-in", chave: "dataCheckin", type: "date" }
+                ]
+            }
+        ];
+        return labelsFormulario
     }
 }
 export default dados

@@ -2,15 +2,16 @@
     <header>
         <div class="linha">
             <div class="coluna">
-                <nav class="jm jm-menu nav-maior none" id="menu">
+                <nav v-if="$route.meta.modulo" class="jm jm-menu nav-maior none" id="menu">
                     <div class="separador">
+                        <a href="#/check-in">Check-in</a>
                         <a href="#/cadastro">Cadastro</a>
-                        <a href="#/cadastro">Check-in</a>
                     </div>
                 </nav>
-                <a href="#" class="logo logo-menor">.</a>
-                <a href="#" class="icone-avancar negrito com-texto"
-                    onclick="document.getElementById('menu').classList.toggle('none');this.classList.toggle('ativo');return false">Cadastro</a>
+                <a href="#/home" class="logo logo-menor">.</a>
+                <a href="#" :class="!$route.meta.modulo ? 'none' : ''"
+                    class="icone-avancar negrito com-texto"
+                    onclick="document.getElementById('menu').classList.toggle('none');this.classList.toggle('ativo');return false">{{ $route.meta.modulo }}</a>
             </div>
             <div class="coluna">
                 <a href="#" class="avatar direita"

@@ -4,7 +4,7 @@
             <div class="m-icone"><a href="#" class="icone-menu" title="Menu"
                     onclick="document.getElementById('main').classList.toggle('esconde');return false"></a></div>
         </div>
-        <nav class="nav-maior separador">
+        <nav class="nav-maior separador" v-if="$route.meta.modulo == 'Cadastro'">
             <a style="cursor: pointer" @click="routerPush('Medicamentos')"
                 :class="this.$route.params.tipo == 'Medicamentos' ? 'ativo' : ''">
                 Medicamentos

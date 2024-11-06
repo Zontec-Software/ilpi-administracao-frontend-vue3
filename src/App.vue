@@ -1,11 +1,14 @@
 <template>
   <HeaderComponent v-if="!$route.meta.esconderMenu" />
-  <main id="main">
-    <MenuLateralComponent v-if="!$route.meta.esconderMenu" />
-    <section>
-      <router-view />
-    </section>
-  </main>
+
+  <body class="inicial" style="min-height: 90vh;">
+    <main id="main" class="esconde">
+      <MenuLateralComponent v-if="!$route.meta.esconderMenuLateral" />
+      <section>
+        <router-view />
+      </section>
+    </main>
+  </body>
 </template>
 <script>
 import HeaderComponent from './components/estrutura/headerComponent.vue';
