@@ -5,8 +5,8 @@
                     class="icone-voltar m-d"></a></div>
             <div class="direita">
                 <div class="tags">
-                    <a class="bg-sucesso" @click="showModalAdministrarMedicamento = true">Administrar Medicamento</a>
-                    <a class="bg-ok" @click="showModalRegistrarConsulta = true">Registrar Consulta</a>
+                    <a class="bg-sucesso" @click="tipoModal = 1, showModal = true">Administrar Medicamento</a>
+                    <a class="bg-ok" @click="tipoModal = 2, showModal = true">Registrar Consulta</a>
                     <a class="bg-erro">Ficha Psicológica</a>
                 </div>
             </div>
@@ -51,10 +51,8 @@
         </div>
     </div>
 
-    <ModalAdministrarMedicamento v-if="showModalAdministrarMedicamento"
-        @fecharModal="showModalAdministrarMedicamento = false" />
-
-    <ModalRegistrarConsulta v-if="showModalRegistrarConsulta" @fecharModal="showModalRegistrarConsulta = false" />
+    <ModalAdministrarMedicamento v-if="showModal && tipoModal == 1" @fecharModal="showModal = false" />
+    <ModalRegistrarConsulta v-if="showModal && tipoModal == 2" @fecharModal="showModal = false" />
 </template>
 <script>
 import CalendarioComponent from '@/components/calendario/CalendarioComponent.vue';
@@ -76,8 +74,8 @@ export default {
     },
     data() {
         return {
-            showModalRegistrarConsulta: false,
-            showModalAdministrarMedicamento: false,
+            showModal: false,
+            tipoModal: null,
             labels: serviceDados.getHospedes().labels,
             lista: serviceDados.getHospedes().lista,
             item: {},
@@ -87,11 +85,6 @@ export default {
     mounted() {
         this.item = this.lista.find(item => item.id == this.hospedeId)
     },
-    methods: {
-        fecharModal() {
-            this.$emit('fecharModal')
-        }
-    }
 }
 </script>
 <style scoped>
