@@ -325,101 +325,96 @@ const dados = {
     getQuartos() {
         const labels = [
             { label: 'Quarto', chave: 'numero', type: 'text' },
-            { label: 'Hospede', chave: 'alocado', type: 'text' },
+            { label: 'Hospede(s)', chave: 'hospedes', type: 'text' },
             { label: 'Status', chave: 'status', type: 'text' },
             { label: 'Tipo', chave: 'tipo', type: 'text' },
+            { label: 'Lotação', chave: 'lotacao', type: 'text' },
         ]
 
         const lista = [
             {
                 id: 1,
                 numero: 100,
-                alocado: "Maria Antônia de Souza",
+                hospedes: [{ id: 1, nome: 'Maria Antônia de Souza', foto: 'https://randomuser.me/api/portraits/med/women/1.jpg' }],
                 status: "ocupado",
                 tipo: "individual",
-                observacoes: "Necessita de cuidados com medicação",
-                dataEntrada: "2023-05-12"
+                lotacao: "1/1",
             },
             {
                 id: 2,
                 numero: 101,
-                alocado: "João Carlos Pereira | Joaquin Barbosa",
+                hospedes: [{ id: 2, nome: 'João Carlos Pereira', foto: 'https://randomuser.me/api/portraits/med/men/2.jpg' },
+                { id: 3, nome: 'Joaquin Barbosa', foto: 'https://randomuser.me/api/portraits/med/men/3.jpg' }
+                ],
                 status: "ocupado",
                 tipo: "duplo",
-                observacoes: "Em tratamento pós-cirúrgico",
-                dataEntrada: "2022-09-20"
+                lotacao: "2/2",
             },
             {
                 id: 3,
                 numero: 102,
-                alocado: "Ana Clara Rodrigues",
+                hospedes: [{ id: 4, nome: 'Ana Clara Rodrigues', foto: 'https://randomuser.me/api/portraits/med/women/4.jpg' }],
                 status: "ocupado",
                 tipo: "individual",
-                observacoes: "Dieta especial controlada",
-                dataEntrada: "2021-11-05"
+                lotacao: "1/1",
             },
             {
                 id: 4,
                 numero: 103,
-                alocado: "Carlos Eduardo da Silva | Luiz Alberto Souza",
+                hospedes: [{ id: 5, nome: 'Carlos Eduardo da Silva', foto: 'https://randomuser.me/api/portraits/med/men/5.jpg' },
+                { id: 6, nome: 'Luiz Alberto Souza', foto: 'https://randomuser.me/api/portraits/med/men/6.jpg' }
+                ],
                 status: "ocupado",
                 tipo: "duplo",
-                observacoes: "Monitoração constante da pressão arterial",
-                dataEntrada: "2020-08-15"
+                lotacao: "2/2",
             },
             {
                 id: 5,
                 numero: 104,
-                alocado: "Francisca Almeida",
+                hospedes: [{ id: 7, nome: 'Francisca Almeida', foto: 'https://randomuser.me/api/portraits/med/women/7.jpg' }],
                 status: "ocupado",
                 tipo: "individual",
-                observacoes: "Necessita de apoio para locomoção",
-                dataEntrada: "2019-07-30"
+                lotacao: "1/1",
             },
             {
                 id: 6,
                 numero: 105,
-                alocado: "Pedro Henrique Barbosa",
+                hospedes: [{ id: 8, nome: 'Pedro Henrique Barbosa', foto: 'https://randomuser.me/api/portraits/med/men/8.jpg' }],
                 status: "desocupado",
                 tipo: "duplo",
-                observacoes: "Desligado",
-                dataEntrada: null
+                lotacao: "1/2",
             },
             {
                 id: 7,
                 numero: 106,
-                alocado: "Luciana Oliveira",
+                hospedes: [{ id: 9, nome: 'Luciana Oliveira', foto: 'https://randomuser.me/api/portraits/med/women/9.jpg' }],
                 status: "ocupado",
                 tipo: "individual",
-                observacoes: "Controle diário de glicemia",
-                dataEntrada: "2023-01-10"
+                lotacao: "1/1",
             },
             {
                 id: 8,
                 numero: 107,
-                alocado: "Fernando Gomes | Alfredo Berreiro",
+                hospedes: [{ id: 10, nome: 'Fernando Gomes', foto: 'https://randomuser.me/api/portraits/med/men/10.jpg' }, { id: 11, nome: 'Alfredo Berreiro', foto: 'https://randomuser.me/api/portraits/med/men/11.jpg' }],
                 status: "ocupado",
                 tipo: "duplo",
-                observacoes: "Reabilitação pós-cirúrgica",
-                dataEntrada: "2022-06-05"
+                lotacao: "2/2",
             },
             {
                 id: 9,
                 numero: 108,
-                alocado: "Marina Souza",
+                hospedes: [{ id: 12, nome: 'Marina Souza', foto: 'https://randomuser.me/api/portraits/med/women/12.jpg' }],
                 status: "ocupado",
                 tipo: "individual",
-                observacoes: "Auxílio para alimentação e higiene",
-                dataEntrada: "2022-10-18"
+                lotacao: "1/1",
             },
             {
                 id: 10,
                 numero: 109,
-                alocado: "José Francisco Ramos",
+                hospedes: [{ id: 13, nome: 'José Francisco Ramos', foto: 'https://randomuser.me/api/portraits/med/men/13.jpg' }],
                 status: "ocupado",
                 tipo: "individual",
-                observacoes: "Acompanhamento médico semanal",
-                dataEntrada: "2023-02-22"
+                lotacao: "1/1",
             }
         ]
         return { lista: lista, labels: labels }

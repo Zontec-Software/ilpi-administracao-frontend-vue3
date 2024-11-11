@@ -6,6 +6,7 @@
                     <div class="separador">
                         <a href="#/check-in">Check-in</a>
                         <a href="#/cadastro">Cadastro</a>
+                        <a href="#/gestao/quartos">Gestão de Quartos</a>
                     </div>
                 </nav>
                 <a href="#/home" class="logo logo-menor">.</a>
@@ -16,7 +17,7 @@
             <div class="coluna">
                 <a href="#" class="avatar direita"
                     onclick="document.getElementById('usuario').classList.toggle('none');this.classList.toggle('ativo');return false"
-                    title="Usuário"><img src="../../assets/img/avatar.png" /></a>
+                    title="Usuário"><img src="@/assets/img/avatar.png" /></a>
                 <nav class="jm jm-avatar none" id="usuario">
                     <div class="separador margem alinha-centro negrito">
                         Jorge Moreira de Souza

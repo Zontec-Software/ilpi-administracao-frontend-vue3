@@ -20,8 +20,14 @@
             </a>
             <a @click="routerPush('HomeCadastro')" style="cursor: pointer" class="card bloco">
                 <figure>
-                    <img src="@/assets/img/cadastro.jpg" />
+                    <img src="@/assets/img/cadastro2.jpg" />
                     <figcaption class="margem abs">Cadastro</figcaption>
+                </figure>
+            </a>
+            <a @click="routerPush('GestãoQuartos')" style="cursor: pointer" class="card bloco">
+                <figure>
+                    <img src="@/assets/img/quartos.jpg" />
+                    <figcaption class="margem abs">Gestão de Quartos</figcaption>
                 </figure>
             </a>
             <a @click="routerPush('EmocaoView')" style="cursor: pointer" class="card bloco">

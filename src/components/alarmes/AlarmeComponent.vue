@@ -23,7 +23,7 @@ export default {
                 this.audio.pause();
                 this.audio.currentTime = 0;
             }
-            this.audio = new Audio(require('@/assets/som/alarme2.mp3'));
+            this.audio = new Audio(require('@/assets/som/alarme.mp3'));
             this.audio.loop = true;
             this.audio.play();
         },

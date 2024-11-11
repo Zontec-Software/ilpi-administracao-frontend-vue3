@@ -7,7 +7,7 @@
                 <div class="tags">
                     <a class="bg-sucesso" @click="tipoModal = 1, showModal = true">Administrar Medicamento</a>
                     <a class="bg-ok" @click="tipoModal = 2, showModal = true">Registrar Consulta</a>
-                    <a class="bg-erro">Ficha Psicológica</a>
+                    <a class="bg-erro" @click="tipoModal = 3, showModal = true">Ficha Psicológica</a>
                 </div>
             </div>
             <h2>Hospede {{ item.nomeCompleto }}</h2>
@@ -53,11 +53,13 @@
 
     <ModalAdministrarMedicamento v-if="showModal && tipoModal == 1" @fecharModal="showModal = false" />
     <ModalRegistrarConsulta v-if="showModal && tipoModal == 2" @fecharModal="showModal = false" />
+    <ModalFichaPsicologica v-if="showModal && tipoModal == 3" @fecharModal="showModal = false" />
 </template>
 <script>
 import CalendarioComponent from '@/components/calendario/CalendarioComponent.vue';
 import DashBoardComponent from '@/components/DashBoard/DashBoardComponent.vue';
 import ModalAdministrarMedicamento from '@/components/modais/modalAdministrarMedicamento.vue';
+import ModalFichaPsicologica from '@/components/modais/modalFichaPsicologica.vue';
 import ModalRegistrarConsulta from '@/components/modais/modalRegistrarConsulta.vue';
 import serviceDados from '@/services/serviceDados'
 
@@ -67,7 +69,8 @@ export default {
         CalendarioComponent,
         DashBoardComponent,
         ModalAdministrarMedicamento,
-        ModalRegistrarConsulta
+        ModalRegistrarConsulta,
+        ModalFichaPsicologica
     },
     props: {
         hospedeId: { Required: false },

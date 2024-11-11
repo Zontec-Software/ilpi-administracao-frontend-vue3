@@ -2,6 +2,9 @@
     <div class="modal-mask" @click="fecharModal">
         <div class="jm" style="min-width: 30vw; min-height: 30vh;" @click.stop>
             <div class="margem">
+                <header>
+                    <h2>Consulta Médica</h2>
+                </header>
                 <fieldset class="grid-3 margem">
                     <div>
                         <label>Data</label>

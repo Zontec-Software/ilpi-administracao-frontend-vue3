@@ -1,8 +1,9 @@
 import EmocaoView from '@/views/EmocaoView.vue';
+import GestãoQuartos from '@/views/GestaoQuartos.vue';
 import { createRouter, createWebHashHistory } from 'vue-router'
 const cadastroItens = () => import('../views/cadastro/CadastroItens.vue');
-const HomeCadastro = () => import('@/views/Home/HomeCadastro.vue');
-const LoginView = () => import('@/views/LoginView.vue');
+const HomeCadastro = () => import('@/views/cadastro/HomeCadastro.vue');
+const LoginView = () => import('@/views/Home/LoginView.vue');
 const HospedeView = () => import('@/views/HospedeView.vue');
 const HomeView = () => import('@/views/Home/HomeView.vue');
 const HomeCheckIn = () => import('@/views/check-in/HomeCheckIn.vue');
@@ -59,6 +60,12 @@ const routes = [
     name: 'EmocaoView',
     component: EmocaoView,
     meta: { modulo: 'Cadastro' }
+  },
+  {
+    path: '/gestao/quartos',
+    name: 'GestãoQuartos',
+    component: GestãoQuartos,
+    meta: { modulo: 'Gestão de Quartos' }
   },
 ]
 
