@@ -14,7 +14,7 @@
                         </select>
                         <div v-if="label.chave == 'hospedes'">
                             <ul
-                                style="list-style: none; display: flex; padding: 12px 16px; border: 1px solid var(--cor-separador); border-radius: 6px;">
+                                style="list-style: none; display: flex; padding: 12px 16px; border: 1px solid var(--cor-separador); border-radius: 6px;min-height: 1.5rem;">
                                 <li v-for="i, index in item[label.chave]" :key="index" class="hospede">
                                     <span v-if="(index + 1) == item[label.chave].length && index !== 0"
                                         style="margin-right: .5rem;">,</span>

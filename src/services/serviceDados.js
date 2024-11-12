@@ -328,7 +328,7 @@ const dados = {
             { label: 'Hospede(s)', chave: 'hospedes', type: 'text' },
             { label: 'Status', chave: 'status', type: 'text' },
             { label: 'Tipo', chave: 'tipo', type: 'text' },
-            { label: 'Lotação', chave: 'lotacao', type: 'text' },
+            { label: 'Capacidade', chave: 'capacidade', type: 'number' },
         ]
 
         const lista = [
@@ -338,7 +338,7 @@ const dados = {
                 hospedes: [{ id: 1, nome: 'Maria Antônia de Souza', foto: 'https://randomuser.me/api/portraits/med/women/1.jpg' }],
                 status: "ocupado",
                 tipo: "individual",
-                lotacao: "1/1",
+                capacidade: 1
             },
             {
                 id: 2,
@@ -348,7 +348,7 @@ const dados = {
                 ],
                 status: "ocupado",
                 tipo: "duplo",
-                lotacao: "2/2",
+                capacidade: 2
             },
             {
                 id: 3,
@@ -356,7 +356,7 @@ const dados = {
                 hospedes: [{ id: 4, nome: 'Ana Clara Rodrigues', foto: 'https://randomuser.me/api/portraits/med/women/4.jpg' }],
                 status: "ocupado",
                 tipo: "individual",
-                lotacao: "1/1",
+                capacidade: 1
             },
             {
                 id: 4,
@@ -366,7 +366,7 @@ const dados = {
                 ],
                 status: "ocupado",
                 tipo: "duplo",
-                lotacao: "2/2",
+                capacidade: 2
             },
             {
                 id: 5,
@@ -374,7 +374,7 @@ const dados = {
                 hospedes: [{ id: 7, nome: 'Francisca Almeida', foto: 'https://randomuser.me/api/portraits/med/women/7.jpg' }],
                 status: "ocupado",
                 tipo: "individual",
-                lotacao: "1/1",
+                capacidade: 1
             },
             {
                 id: 6,
@@ -382,7 +382,7 @@ const dados = {
                 hospedes: [{ id: 8, nome: 'Pedro Henrique Barbosa', foto: 'https://randomuser.me/api/portraits/med/men/8.jpg' }],
                 status: "desocupado",
                 tipo: "duplo",
-                lotacao: "1/2",
+                capacidade: 2
             },
             {
                 id: 7,
@@ -390,7 +390,7 @@ const dados = {
                 hospedes: [{ id: 9, nome: 'Luciana Oliveira', foto: 'https://randomuser.me/api/portraits/med/women/9.jpg' }],
                 status: "ocupado",
                 tipo: "individual",
-                lotacao: "1/1",
+                capacidade: 1
             },
             {
                 id: 8,
@@ -398,7 +398,7 @@ const dados = {
                 hospedes: [{ id: 10, nome: 'Fernando Gomes', foto: 'https://randomuser.me/api/portraits/med/men/10.jpg' }, { id: 11, nome: 'Alfredo Berreiro', foto: 'https://randomuser.me/api/portraits/med/men/11.jpg' }],
                 status: "ocupado",
                 tipo: "duplo",
-                lotacao: "2/2",
+                capacidade: 2
             },
             {
                 id: 9,
@@ -406,7 +406,7 @@ const dados = {
                 hospedes: [{ id: 12, nome: 'Marina Souza', foto: 'https://randomuser.me/api/portraits/med/women/12.jpg' }],
                 status: "ocupado",
                 tipo: "individual",
-                lotacao: "1/1",
+                capacidade: 1
             },
             {
                 id: 10,
@@ -414,7 +414,7 @@ const dados = {
                 hospedes: [{ id: 13, nome: 'José Francisco Ramos', foto: 'https://randomuser.me/api/portraits/med/men/13.jpg' }],
                 status: "ocupado",
                 tipo: "individual",
-                lotacao: "1/1",
+                capacidade: 1
             }
         ]
         return { lista: lista, labels: labels }
