@@ -21,7 +21,7 @@
                                 item.status }}</span>
                     </div>
                     <div v-if="label.chave == 'hospedes'">
-                        <ul style="list-style: none; display: flex;">
+                        <ul style="list-style: none; display: flex; padding: 0px; margin: 0px">
                             <li v-for="i, index in item[label.chave]" :key="index">
                                 <span v-if="(index + 1) == item[label.chave].length && index !== 0"
                                     style="margin-right: .5rem;">,</span>
