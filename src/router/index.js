@@ -8,6 +8,7 @@ const HospedeView = () => import('@/views/HospedeView.vue');
 const HomeView = () => import('@/views/Home/HomeView.vue');
 const HomeCheckIn = () => import('@/views/check-in/HomeCheckIn.vue');
 const FormularioCheckIn = () => import('@/views/check-in/FormularioCheckIn.vue');
+const cadastroFichas = () => import('@/views/cadastro/CriarFicha.vue');
 
 const routes = [
   {
@@ -46,6 +47,12 @@ const routes = [
     name: 'cadastroItens',
     props: true,
     component: cadastroItens,
+    meta: { modulo: 'Cadastro' }
+  },
+  {
+    path: '/cadastroFichas',
+    name: 'cadastroFichas',
+    component: cadastroFichas,
     meta: { modulo: 'Cadastro' }
   },
   {

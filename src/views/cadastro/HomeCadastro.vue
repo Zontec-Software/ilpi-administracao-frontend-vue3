@@ -26,6 +26,12 @@
                     <figcaption class="margem abs">Hospede</figcaption>
                 </figure>
             </a>
+            <a @click="routerPush('Fichas')" style="cursor: pointer" class="card bloco">
+                <figure>
+                    <img src="@/assets/img/ficha.jpg" />
+                    <figcaption class="margem abs">Criar Nova Ficha</figcaption>
+                </figure>
+            </a>
             <a @click="routerPush('Leitos e Instalações')" style="cursor: pointer" class="card bloco">
                 <figure>
                     <img src="@/assets/img/leitos.jpg" />

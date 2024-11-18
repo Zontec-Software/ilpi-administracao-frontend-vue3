@@ -3,17 +3,14 @@
         <div class="margem container">
             <div class="m-icone esquerda"><a @click="this.$router.back()" style="cursor: pointer;"
                     class="icone-voltar m-d"></a></div>
-            <div class="direita">
-                <div class="tags">
-                    <a class="bg-sucesso" @click="tipoModal = 1, showModal = true">Administrar Medicamento</a>
-                    <a class="bg-ok" @click="tipoModal = 2, showModal = true">Registrar Consulta</a>
-                    <a class="bg-erro" @click="tipoModal = 3, showModal = true">Ficha Psicológica</a>
-                </div>
-            </div>
             <h2>Hospede {{ item.nomeCompleto }}</h2>
         </div>
     </div>
     <div class="margem container">
+        <div class="tags m-b">
+            <a class="bg-sucesso" @click="tipoModal = 1, showModal = true">Administrar Medicamento</a>
+            <a class="bg-ok" @click="tipoModal = 2, showModal = true">Registrar Consulta</a>
+        </div>
         <div class="margem bloco">
             <h2>Dados</h2>
             <fieldset class="grid-3 margem">
@@ -49,18 +46,28 @@
             <h2>Dados médicos</h2>
             <DashBoardComponent />
         </div>
+        <br>
+        <div class="margem bloco">
+            <h2>Ficha Psicológica</h2>
+            <fichaPsicologica />
+        </div>
+        <br>
+        <div class="margem bloco">
+            <h2>Dieta</h2>
+            <fichaControleDieta />
+        </div>
     </div>
 
     <ModalAdministrarMedicamento v-if="showModal && tipoModal == 1" @fecharModal="showModal = false" />
     <ModalRegistrarConsulta v-if="showModal && tipoModal == 2" @fecharModal="showModal = false" />
-    <ModalFichaPsicologica v-if="showModal && tipoModal == 3" @fecharModal="showModal = false" />
 </template>
 <script>
 import CalendarioComponent from '@/components/calendario/CalendarioComponent.vue';
 import DashBoardComponent from '@/components/DashBoard/DashBoardComponent.vue';
 import ModalAdministrarMedicamento from '@/components/modais/modalAdministrarMedicamento.vue';
-import ModalFichaPsicologica from '@/components/modais/modalFichaPsicologica.vue';
 import ModalRegistrarConsulta from '@/components/modais/modalRegistrarConsulta.vue';
+import fichaPsicologica from '@/components/fichas/fichaPsicologica.vue'
+import fichaControleDieta from '@/components/fichas/fichaControleDieta.vue'
 import serviceDados from '@/services/serviceDados'
 
 export default {
@@ -70,7 +77,8 @@ export default {
         DashBoardComponent,
         ModalAdministrarMedicamento,
         ModalRegistrarConsulta,
-        ModalFichaPsicologica
+        fichaPsicologica,
+        fichaControleDieta
     },
     props: {
         hospedeId: { Required: false },
@@ -99,5 +107,17 @@ export default {
     transition: all 100ms linear;
     font-size: 27px;
     cursor: pointer;
+}
+
+.mascaraSelect {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent !important;
+    text-align: center;
+    border: none;
+    padding: 0px;
+    min-width: 3rem
 }
 </style>

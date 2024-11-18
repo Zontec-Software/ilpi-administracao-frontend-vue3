@@ -627,6 +627,33 @@ const dados = {
             }
         ];
         return labelsFormulario
+    },
+    getFichas() {
+        const labels = [
+            { label: 'Nome', chave: 'nome', type: 'text' },
+            { label: 'Status', chave: 'status', type: 'text' },
+            { label: 'Criado em', chave: 'criadoEm', type: 'date' },
+            { label: 'Autor', chave: 'autor', type: 'text' },
+        ]
+
+        const lista = [
+            {
+                id: 1,
+                nome: 'Psicologica',
+                criadoEm: '2022-04-11',
+                autor: 'Lucas Lima Gonçalves',
+                status: 'ativo'
+            },
+            {
+                id: 2,
+                nome: 'Dieta',
+                criadoEm: '2022-04-11',
+                autor: 'Lucas Lima Gonçalves',
+                status: 'ativo'
+            }
+        ]
+
+        return { labels, lista }
     }
 }
 export default dados

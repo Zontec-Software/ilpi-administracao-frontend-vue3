@@ -15,7 +15,8 @@
   <div class="margem container">
     <div class="bloco margem">
       <div class="alinha-direita" style="cursor: pointer" title="Novo Medicamento">
-        <a class="icone-inc" @click="showModal = true"></a>
+        <a class="icone-inc"
+          @click="tipo == 'Fichas' ? $router.push({ name: 'cadastroFichas' }) : showModal = true"></a>
       </div>
       <TabelaItens :itens="lista" :labels="labels" @editar="editar" />
     </div>
@@ -59,12 +60,16 @@ export default {
   },
   methods: {
     editar(item) {
-      this.itemEditado = item;
-      if (this.tipo == 'Hospede') {
-        var hospedeId = item.id
-        this.$router.push({ name: 'HospedeView', params: { hospedeId } })
+      if (this.tipo == 'Fichas') {
+        this.$router.push({ name: 'cadastroFichas' })
       } else {
-        this.showModal = true
+        this.itemEditado = item;
+        if (this.tipo == 'Hospede') {
+          var hospedeId = item.id
+          this.$router.push({ name: 'HospedeView', params: { hospedeId } })
+        } else {
+          this.showModal = true
+        }
       }
     },
 
@@ -89,6 +94,10 @@ export default {
         case "Atividades":
           this.lista = await serviceDados.getAtividades().lista
           this.labels = await serviceDados.getAtividades().labels
+          break;
+        case "Fichas":
+          this.lista = await serviceDados.getFichas().lista
+          this.labels = await serviceDados.getFichas().labels
           break;
         default:
           break;
