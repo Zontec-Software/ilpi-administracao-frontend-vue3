@@ -739,6 +739,9 @@ a[class*=" icone-"]:not(:hover):before {
 .icone-senha:before {
   background-image: url(../img/lock.svg);
 }
+.icone-codeBar:before {
+  background-image: url(../img/codeBar.svg);
+}
 
 [class^=grid-],
 [class*=" grid-"] {

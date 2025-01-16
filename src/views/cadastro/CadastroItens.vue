@@ -14,18 +14,22 @@
   </div>
   <div class="margem container">
     <div class="bloco margem">
-      <div class="alinha-direita" style="cursor: pointer" title="Novo Medicamento">
-        <a class="icone-inc"
-          @click="tipo == 'Fichas' ? $router.push({ name: 'cadastroFichas' }) : showModal = true"></a>
+      <div class="alinha-direita" style="cursor: pointer">
+        <a class="icone-compras" v-if="tipo == 'Medicamentos'" title="Atualizar estoque"
+          @click="showModal = true, tipoModal = 2"></a>
+        <a class="icone-inc" :title="`Cadastrar ${tipo}`"
+          @click="tipo == 'Fichas' ? $router.push({ name: 'cadastroFichas' }) : showModal = true, tipoModal = 1"></a>
       </div>
       <TabelaItens :itens="lista" :labels="labels" @editar="editar" />
     </div>
   </div>
-
-  <ModalNovoItem v-if="showModal" :labels="labels" :itemEditado="itemEditado"
+  <ModalNovoItem v-if="showModal && tipoModal == 1" :labels="labels" :itemEditado="itemEditado"
     @fecharModal="showModal = false, itemEditado = {}" />
+
+  <ModalAtualizarEstoque v-if="showModal && tipoModal == 2" @fecharModal="showModal = false" />
 </template>
 <script>
+import ModalAtualizarEstoque from '@/components/modais/modalAtualizarEstoque.vue';
 import ModalNovoItem from '@/components/modais/modalNovoItem.vue';
 import TabelaItens from '@/components/tabelas/TabelaItens.vue';
 import serviceDados from '@/services/serviceDados'
@@ -33,6 +37,7 @@ import serviceDados from '@/services/serviceDados'
 export default {
   components: {
     ModalNovoItem,
+    ModalAtualizarEstoque,
     TabelaItens,
   },
 

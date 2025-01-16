@@ -1,6 +1,7 @@
 const dados = {
     getMedicamentos() {
         const labels = [
+            { label: 'Código', chave: 'codigoBarra', type: 'number' },
             { label: 'Nome', chave: 'nome', type: 'text' },
             { label: 'Tipo', chave: 'tipo', type: 'text' },
             { label: 'Quantidade em Estoque', chave: 'quantidadeEstoque', type: 'number' },
@@ -9,86 +10,97 @@ const dados = {
         ]
         const lista = [
             {
-                id: 1,
-                nome: "Paracetol",
-                tipo: "Analgésico",
-                quantidadeEstoque: 150,
-                fabricante: "FarmacoPlus",
-                validade: "2025-08-15"
+                "id": 1,
+                "nome": "Paracetol",
+                "tipo": "Analgésico",
+                "quantidadeEstoque": 150,
+                "fabricante": "FarmacoPlus",
+                "validade": "2025-08-15",
+                "codigoBarra": 12312324
             },
             {
-                id: 2,
-                nome: "AmoCil",
-                tipo: "Antibiótico",
-                quantidadeEstoque: 80,
-                fabricante: "BioPharma",
-                validade: "2024-12-30"
+                "id": 2,
+                "nome": "AmoCil",
+                "tipo": "Antibiótico",
+                "quantidadeEstoque": 80,
+                "fabricante": "BioPharma",
+                "validade": "2024-12-30",
+                "codigoBarra": 123456789102
             },
             {
-                id: 3,
-                nome: "Diclona",
-                tipo: "Anti-inflamatório",
-                quantidadeEstoque: 200,
-                fabricante: "MedLife",
-                validade: "2025-05-10"
+                "id": 3,
+                "nome": "Diclona",
+                "tipo": "Anti-inflamatório",
+                "quantidadeEstoque": 200,
+                "fabricante": "MedLife",
+                "validade": "2025-05-10",
+                "codigoBarra": 123456789103
             },
             {
-                id: 4,
-                nome: "Sertraliv",
-                tipo: "Antidepressivo",
-                quantidadeEstoque: 60,
-                fabricante: "NeuroCare",
-                validade: "2026-03-20"
+                "id": 4,
+                "nome": "Sertraliv",
+                "tipo": "Antidepressivo",
+                "quantidadeEstoque": 60,
+                "fabricante": "NeuroCare",
+                "validade": "2026-03-20",
+                "codigoBarra": 123456789104
             },
             {
-                id: 5,
-                nome: "Febrimed",
-                tipo: "Antipirético",
-                quantidadeEstoque: 300,
-                fabricante: "FarmacoPlus",
-                validade: "2025-11-25"
+                "id": 5,
+                "nome": "Febrimed",
+                "tipo": "Antipirético",
+                "quantidadeEstoque": 300,
+                "fabricante": "FarmacoPlus",
+                "validade": "2025-11-25",
+                "codigoBarra": 123456789105
             },
             {
-                id: 6,
-                nome: "Pressotrol",
-                tipo: "Antihipertensivo",
-                quantidadeEstoque: 100,
-                fabricante: "CardioMed",
-                validade: "2024-07-19"
+                "id": 6,
+                "nome": "Pressotrol",
+                "tipo": "Antihipertensivo",
+                "quantidadeEstoque": 100,
+                "fabricante": "CardioMed",
+                "validade": "2024-07-19",
+                "codigoBarra": 123456789106
             },
             {
-                id: 7,
-                nome: "Rivax",
-                tipo: "Anticoagulante",
-                quantidadeEstoque: 45,
-                fabricante: "BioPharma",
-                validade: "2026-01-05"
+                "id": 7,
+                "nome": "Rivax",
+                "tipo": "Anticoagulante",
+                "quantidadeEstoque": 45,
+                "fabricante": "BioPharma",
+                "validade": "2026-01-05",
+                "codigoBarra": 123456789107
             },
             {
-                id: 8,
-                nome: "Neurocalm",
-                tipo: "Ansiolítico",
-                quantidadeEstoque: 75,
-                fabricante: "MindHealth",
-                validade: "2025-09-12"
+                "id": 8,
+                "nome": "Neurocalm",
+                "tipo": "Ansiolítico",
+                "quantidadeEstoque": 75,
+                "fabricante": "MindHealth",
+                "validade": "2025-09-12",
+                "codigoBarra": 123456789108
             },
             {
-                id: 9,
-                nome: "Salbutech",
-                tipo: "Broncodilatador",
-                quantidadeEstoque: 120,
-                fabricante: "RespiraCare",
-                validade: "2026-06-18"
+                "id": 9,
+                "nome": "Salbutech",
+                "tipo": "Broncodilatador",
+                "quantidadeEstoque": 120,
+                "fabricante": "RespiraCare",
+                "validade": "2026-06-18",
+                "codigoBarra": 123456789109
             },
             {
-                id: 10,
-                nome: "Fluconamed",
-                tipo: "Antifúngico",
-                quantidadeEstoque: 90,
-                fabricante: "Dermamed",
-                validade: "2025-02-28"
+                "id": 10,
+                "nome": "Fluconamed",
+                "tipo": "Antifúngico",
+                "quantidadeEstoque": 90,
+                "fabricante": "Dermamed",
+                "validade": "2025-02-28",
+                "codigoBarra": 123456789110
             }
-        ];
+        ]
+            ;
 
         return { lista: lista, labels: labels }
     },
