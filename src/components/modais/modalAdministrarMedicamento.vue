@@ -7,6 +7,15 @@
                 </header>
                 <fieldset class="grid-3 margem">
                     <div>
+                        <label>Código</label>
+                        <div class="codigo">
+                            <input type="text" v-model="codigo" @focusout="inserirCodigo(codigo)"
+                                @keyup.enter="inserirCodigo(codigo)" />
+                            <a class="icone-codeBar" title="Escanear Código de Barras" @click="LerCodigo = true"
+                                style="cursor: pointer"></a>
+                        </div>
+                    </div>
+                    <div>
                         <label>Medicamento</label>
                         <select>
                             <option>Remedio</option>
@@ -36,17 +45,54 @@
             </div>
         </div>
     </div>
+
+    <InputCodigoBarra v-if="LerCodigo" @codigo="inserirCodigo" @fecharModal="LerCodigo = false" />
 </template>
 
 <script>
+import InputCodigoBarra from '@/assets/LeitorCodigoBarras/inputCodigoBarra.vue';
+
 export default {
     name: 'ModalAdministrarMedicamento',
+    components: {
+        InputCodigoBarra,
+    },
+    data() {
+        return {
+            LerCodigo: false,
+            codigo: null,
+        }
+    },
+
     methods: {
-        fecharModal(){
+        fecharModal() {
             this.$emit('fecharModal')
         }
     }
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.codigo {
+    margin: 0;
+
+    input {
+        width: calc(100% - 48px);
+        float: left;
+    }
+}
+
+.codigo {
+    border: 1px solid var(--cor-separador);
+    border-radius: 6px;
+    padding: 0 calc(var(--margem)/2);
+    margin: 0 10px 0 0;
+
+    input {
+        width: 350px;
+        background: none;
+        border-color: transparent;
+    }
+
+}
+</style>

@@ -42,4 +42,5 @@ export default {
   background-color: var(--cor-separador);
   border-radius: 20px;
 }
+
 </style>

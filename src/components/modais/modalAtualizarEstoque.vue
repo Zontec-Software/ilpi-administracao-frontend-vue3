@@ -74,11 +74,6 @@ export default {
 </script>
 
 <style scoped>
-video {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-}
-
 .codigo {
     margin: 0;
 
